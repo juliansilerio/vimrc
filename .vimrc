@@ -1,4 +1,14 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Maintainer: 
+"       Amir Salihefendic
+"       http://amix.dk - amix@amix.dk
+"
+" Version: 
+"       6.0 - 01/04/17 14:24:34 
+"
+" Blog_post: 
+"       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
+"
 " Awesome_version:
 "       Get this config, nice color schemes and lots of plugins!
 "
@@ -133,6 +143,9 @@ set foldcolumn=1
 " Line numbers
 set number
 
+" Fold code
+set foldmethod=indent
+set foldlevelstart=20
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
