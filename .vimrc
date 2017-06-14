@@ -147,6 +147,36 @@ set number
 set foldmethod=indent
 set foldlevelstart=20
 
+" Autoclose braces
+noremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+            
+" Autoclose parantheses
+inoremap ( ()<Esc>i
+inoremap        (  ()<Left>
+inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+
+" Autoclose brackets
+inoremap [ []<Esc>i
+inoremap        [  []<Left>
+inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+
+" Autoclose double quotes, typing closing character not working
+inoremap " ""<Esc>i
+inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == '\"' ? '\<Right>' : '\"\"\<Left>'
+
+" Autoclose single quotes
+inoremap ' ''<Esc>i
+inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+
+" Autoclose <>
+inoremap < <><Esc>i
+inoremap        <  <><Left>
+inoremap <expr> >  strpart(getline('.'), col('.')-1, 1) == ">" ? "\<Right>" : ">"
+
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
