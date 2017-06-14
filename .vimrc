@@ -165,7 +165,7 @@ inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]
 
 " Autoclose double quotes, typing closing character not working
 inoremap " ""<Esc>i
-inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == '\"' ? '\<Right>' : '\"\"\<Left>'
+"inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == '\"' ? '\<Right>' : '\"\"\<Left>'
 
 " Autoclose single quotes
 inoremap ' ''<Esc>i
@@ -234,7 +234,7 @@ set tabstop=4
 
 " Linebreak on 500 characters
 set lbr
-set tw=500
+st tw=500
 
 set ai "Auto indent
 set si "Smart indent
