@@ -40,6 +40,54 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"-------------------Bundle Scripts-----------------------------
+
+if &compatible
+    set nocompatible               " Be iMproved
+endif
+  
+" Required:
+set runtimepath+=/home/jjs2245/.vim/bundle/neobundle.vim/
+  
+" Required:
+call neobundle#begin(expand('/home/jjs2245/.vim/bundle'))
+  
+" Let NeoBundle manage NeoBundle
+" Required:
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+" Add or remove your Bundles here:
+NeoBundle 'evidens/vim-twig'
+
+" You can specify revision/branch/tag.
+" NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
+
+" Required:
+call neobundle#end()
+
+" If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+
+"----------------End NeoBundle Scripts-------------------------
+
+execute pathogen#infect()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
