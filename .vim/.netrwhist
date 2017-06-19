@@ -1,4 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/home/jjs2245/Downloads/program_show'
 let g:netrw_dirhist_2='/home/vagrant/.vim'
+let g:netrw_dirhist_3='/vagrant/oasis/src/AppBundle/Resources/views/AcademicAction'

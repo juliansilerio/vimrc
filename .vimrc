@@ -55,6 +55,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
 NeoBundle 'sheerun/vim-polyglot'
+NeoBundle 'scrooloose/nerdtree'
 
 " You can specify revision/branch/tag.
 " NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -68,6 +69,18 @@ NeoBundleCheck
 "----------------End NeoBundle Scripts-------------------------
 
 execute pathogen#infect()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" NERDTree settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <C-n> :NERDTreeToggle<CR>
+
+autocmd vimenter * NERDTree
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -263,7 +276,7 @@ set tabstop=4
 
 " Linebreak on 500 characters
 set lbr
-set tw=80
+set tw=500
 
 set ai "Auto indent
 set si "Smart indent
