@@ -56,7 +56,11 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Add or remove your Bundles here:
 NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'scrooloose/nerdtree'
-
+NeoBundle 'raimondi/delimitmate'
+NeoBundle 'ajh17/VimCompletesMe'
+" NeoBundle 'Shougo/neocomplete.vim' no lua support :(
+" NeoBundle 'valloric/youcompleteme' need newer version of vim :(
+"
 " You can specify revision/branch/tag.
 " NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
@@ -68,18 +72,28 @@ NeoBundleCheck
 
 "----------------End NeoBundle Scripts-------------------------
 
+"
+" Enable neocomplete
+" Also doesn't work (no lua support) :(
+" let g:neocomplete#enable_at_startup = 1
+
 execute pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Toggle tree ctrl+n
 map <C-n> :NERDTreeToggle<CR>
 
-autocmd vimenter * NERDTree
+" Open tree when opening file with vim
+" autocmd vimenter * NERDTree
 
+" Open tree when starting vim, no file
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" Close tree when last file is closed
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -189,34 +203,36 @@ set number
 set foldmethod=indent
 set foldlevelstart=20
 
+" Commented out in favor of delimiteMate plugin
+"
 " Autoclose braces
-noremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
+"noremap {      {}<Left>
+"inoremap {<CR>  {<CR>}<Esc>O
+"inoremap {{     {
+"inoremap {}     {}
             
 " Autoclose parantheses
-inoremap ( ()<Esc>i
-inoremap        (  ()<Left>
-inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+"inoremap ( ()<Esc>i
+"inoremap        (  ()<Left>
+"inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 
 " Autoclose brackets
-inoremap [ []<Esc>i
-inoremap        [  []<Left>
-inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+"inoremap [ []<Esc>i
+"inoremap        [  []<Left>
+"inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
 
 " Autoclose double quotes, typing closing character not working
-inoremap " ""<Esc>i
+"inoremap " ""<Esc>i
 "inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == '\"' ? '\<Right>' : '\"\"\<Left>'
 
 " Autoclose single quotes
-inoremap ' ''<Esc>i
-inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
+"inoremap ' ''<Esc>i
+"inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
 
 " Autoclose <>
-inoremap < <><Esc>i
-inoremap        <  <><Left>
-inoremap <expr> >  strpart(getline('.'), col('.')-1, 1) == ">" ? "\<Right>" : ">"
+"inoremap < <><Esc>i
+"inoremap        <  <><Left>
+"inoremap <expr> >  strpart(getline('.'), col('.')-1, 1) == ">" ? "\<Right>" : ">"
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
