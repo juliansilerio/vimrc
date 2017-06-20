@@ -58,9 +58,7 @@ NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'raimondi/delimitmate'
 NeoBundle 'ajh17/VimCompletesMe'
-" NeoBundle 'Shougo/neocomplete.vim' no lua support :(
-" NeoBundle 'valloric/youcompleteme' need newer version of vim :(
-"
+
 " You can specify revision/branch/tag.
 " NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
@@ -71,11 +69,6 @@ call neobundle#end()
 NeoBundleCheck
 
 "----------------End NeoBundle Scripts-------------------------
-
-"
-" Enable neocomplete
-" Also doesn't work (no lua support) :(
-" let g:neocomplete#enable_at_startup = 1
 
 execute pathogen#infect()
 
@@ -99,6 +92,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Fix indentation
+map <F7> gg=G
+
 " Sets how many lines of history VIM has to remember
 set history=500
 
