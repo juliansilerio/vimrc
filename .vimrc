@@ -58,6 +58,7 @@ NeoBundle 'sheerun/vim-polyglot'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'raimondi/delimitmate'
 NeoBundle 'ajh17/VimCompletesMe'
+NeoBundle 'majutsushi/tagbar'
 
 " You can specify revision/branch/tag.
 " NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -118,6 +119,8 @@ nmap <leader>w :w!<cr>
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
 
+" Tagbar Toggle
+nmap <F8> :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
