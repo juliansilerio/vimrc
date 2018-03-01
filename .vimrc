@@ -94,6 +94,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+
 " Fix indentation
 map <F7> gg=G
 
@@ -246,12 +247,9 @@ if $COLORTERM == 'gnome-terminal'
     set t_Co=256
 endif
 
-try
-    colorscheme desert
-catch
-endtry
+colo default
 
-set background=dark
+"set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
